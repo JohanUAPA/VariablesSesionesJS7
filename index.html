@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="form-container">
+        
+        <form id="formulario">
+            <h2>Introduce tu nombre y apellido</h2>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br>
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required><br>
+            <button type="button" onclick="enviarDatos()">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        function enviarDatos() {
+            // Obtener valores de los campos de entrada
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
+            
+            // Guardar datos en sessionStorage
+            sessionStorage.setItem('nombre', nombre);
+            sessionStorage.setItem('apellido', apellido);
+            
+            // Abrir nueva pestaña con los datos
+            window.open('mostrar.html', '_blank');
+        }
+    </script>
+</body>
+</html>

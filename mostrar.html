@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Datos</title>
+    <link rel="stylesheet" href="CSS/style2.css">
+</head>
+<body>
+    <div class="contenedor-datos">
+        <h2>Datos recibidos:</h2>
+        <p id="nombre"></p>
+        <p id="apellido"></p>
+        <a href="index.html" class="back-button">Volver</a>
+    </div>
+
+    <script>
+        // Obtener datos del sessionStorage y mostrarlos en la página
+        window.onload = function() {
+            const nombre = sessionStorage.getItem('nombre');
+            const apellido = sessionStorage.getItem('apellido');
+
+            document.getElementById('nombre').textContent = 'Nombre: ' + nombre;
+            document.getElementById('apellido').textContent = 'Apellido: ' + apellido;
+        }
+    </script>
+</body>
+</html>
